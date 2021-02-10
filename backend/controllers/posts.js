@@ -1,7 +1,7 @@
 import PostMessage from '../models/postMessage.js';
 export const getPosts = async (req, res)=>{
     try{
-       const getMemes = await  PostMessage.find(); 
+       const getMemes = await  PostMessage.find().sort({$natural:-1}); 
        console.log(getMemes);
        res.status(200).json(getMemes);
     }
