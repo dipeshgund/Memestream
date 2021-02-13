@@ -1,7 +1,8 @@
 import PostMessage from '../models/postMessage.js';
+import mongoose from 'mongoose';
 export const getPosts = async (req, res)=>{
     try{
-       const getMemes = await  PostMessage.find().sort({$natural:-1}); 
+       const getMemes = await  PostMessage.find().sort({$natural:-1}).limit(100); 
        console.log(getMemes);
        res.status(200).json(getMemes);
     }

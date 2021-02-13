@@ -15,11 +15,11 @@ const Form = () => {
     const dispatch = useDispatch();
 
     const handleSubmit = (e)=>{
-        e.preventDefault();
         dispatch(createPost(memeDetails));
+        
     }
     const handleClear =() =>{
-
+       setMemeDetails({aurhor:'',caption: '', url: ''});
     }
     return ( 
         <Paper className = {classes.paper}>
